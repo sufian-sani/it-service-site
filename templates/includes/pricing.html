@@ -1,0 +1,159 @@
+{% load static %}
+
+<!-- section begin -->
+<section id="section-pricing" class="no-top" data-bgimage="url(images/background/3c.png) top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="text-center">
+                    <h2><span class="uptitle id-color">Pricing Table</span>Select Your Plan</h2>
+                    <div class="spacer-20"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col text-center">
+                <div class="switch-set">
+                    <div>Monthly</div>
+                    <div><input id="sw-1" class="switch" type="checkbox" /></div>
+                    <div>Yearly</div>
+                    <div class="spacer-20"></div>
+                </div>
+            </div>
+        </div>
+        <div class="item pricing">
+            <div class="container">
+                <div class="row">
+                    {% for pricing in pricingcard %}
+                    <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0s">
+                        <div class="pricing-s1 mb30">
+                            <div class="top">
+                                <h2>{{pricing.title}}</h2>
+                                <p class="plan-tagline">{{pricing.sub_title}}</p>
+                                <span class="text-muted" style="font-size:11px;">{{pricing.catagory}}</span>
+                            </div>
+                            <div class="mid text-light bg-color">
+                                <p class="price">
+                                    <span class="currency">$</span>
+                                    <span class="m opt-1">{{pricing.monthly_prices}}</span>
+                                    <span class="y opt-2">{{pricing.yearly_prices}}</span>
+                                    <span class="month">p/mo</span>
+                                </p>               
+                            </div>
+                            
+                            <div class="bottom">
+
+                                <ul>
+                                    {% for attibute in pricingattibute %}
+                                    {% if attibute.catagory == pricing %}
+                                        <li><i class="fa fa-check"></i>{{attibute.attibute}}</li>
+                                    {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            
+                            <div class="action">
+                                <a type="button" data-toggle="modal" data-target="#exampleModal" role="button" href="#" class="btn btn-custom">Subscribe</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% comment %} <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="0s">
+                        <div class="pricing-s1 mb30">
+                            <div class="top">
+                                <h2>Basic</h2>
+                                <p class="plan-tagline">Best for personal</p>
+                            </div>
+                            <div class="mid text-light bg-color">
+                                <p class="price">
+                                    <span class="currency">$</span>
+                                    <span class="m opt-1">5.59</span>
+                                    <span class="y opt-2">3.46</span>
+                                    <span class="month">p/mo</span>
+                                </p>
+                            </div>
+
+                            <div class="bottom">
+                                <ul>
+                                    <li><i class="fa fa-check"></i>Single Campaign</li>
+                                    <li><i class="fa fa-check"></i>Website Design</li>
+                                    <li><i class="fa fa-check"></i>Customer Polls</li>
+                                    <li><i class="fa fa-check"></i>Question &amp; Comment</li>
+                                    <li><i class="fa fa-check"></i>Backlink Checker</li>
+                                    <li><i class="fa fa-check"></i>Key Words Analyser</li>
+                                </ul>
+                            </div>
+
+                            <div class="action">
+                                <a href="#" class="btn-custom">Sign Up Now</a>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+                    {% comment %} <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".25s">
+                        <div class="pricing-s1 mb30">
+                            <div class="top">
+                                <h2>Premium</h2>
+                                <p class="plan-tagline">Best for small group</p>
+                            </div>
+
+                            <div class="mid text-light bg-color-2">
+                                <p class="price">
+                                    <span class="currency">$</span>
+                                    <span class="m opt-1">9.59</span>
+                                    <span class="y opt-2">7.46</span>
+                                    <span class="month">p/mo</span>
+                                </p>
+                            </div>
+                            <div class="bottom">
+                                <ul>
+                                    <li><i class="fa fa-check"></i>Double Campaign</li>
+                                    <li><i class="fa fa-check"></i>Website Design</li>
+                                    <li><i class="fa fa-check"></i>Customer Polls</li>
+                                    <li><i class="fa fa-check"></i>Question &amp; Comment</li>
+                                    <li><i class="fa fa-check"></i>Backlink Checker</li>
+                                    <li><i class="fa fa-check"></i>Key Words Analyser</li>
+                                </ul>
+                            </div>
+
+                            <div class="action">
+                                <a href="#" class="btn-custom">Sign Up Now</a>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+                    {% comment %} <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay=".75s">
+                        <div class="pricing-s1 mb30">
+                            <div class="top">
+                                <h2>Business</h2>
+                                <p class="plan-tagline">Best for organization</p>
+                            </div>
+                            <div class="mid text-light bg-color-3">
+                                <p class="price">
+                                    <span class="currency">$</span>
+                                    <span class="m opt-1">24.99</span>
+                                    <span class="y opt-2">16.49</span>
+                                    <span class="month">p/mo</span>
+                                </p>
+                            </div>
+                            <div class="bottom">
+                                <ul>
+                                    <li><i class="fa fa-check"></i>Triple Campaign</li>
+                                    <li><i class="fa fa-check"></i>Website Design</li>
+                                    <li><i class="fa fa-check"></i>Customer Polls</li>
+                                    <li><i class="fa fa-check"></i>Question &amp; Comment</li>
+                                    <li><i class="fa fa-check"></i>Backlink Checker</li>
+                                    <li><i class="fa fa-check"></i>Key Words Analyser</li>
+                                </ul>
+                            </div>
+
+                            <div class="action">
+                                <a href="#" class="btn-custom">Sign Up Now</a>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- section close -->

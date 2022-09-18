@@ -1,0 +1,23 @@
+.service_section a{
+    color: #8492a6 !important;
+}
+
+.service_page .service_card a{
+    text-decoration: none;
+    color: #8492a6;
+}
+
+#form_subscribe input[type=email] {
+    padding: 8px 12px 9px 12px;
+    width: 80%;
+    float: left;
+    display: table-cell;
+    border-radius: 60px 0 0 60px;
+    -moz-border-radius: 60px 0 0 60px;
+    -webkit-border-radius: 60px 0 0 60px;
+    border: none;
+    background: rgba(255,255,255,.7);
+    -webkit-box-shadow: 2px 2px 20px 0px rgb(20 20 20 / 5%);
+    -moz-box-shadow: 2px 2px 20px 0px rgba(20,20,20, 0.05);
+    box-shadow: 2px 2px 20px 0px rgb(20 20 20 / 5%);
+}

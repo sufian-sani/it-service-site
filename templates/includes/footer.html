@@ -1,0 +1,141 @@
+{% load static %}
+
+<!-- footer begin -->
+<footer class="footer footer-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="widget">
+                    <a href="index.html"><img alt="" class="logo" src="{% static '' %}images/logo-2.png"></a>
+                    <div class="spacer-20"></div>
+                    <p>{{footersection.footer_main_description}}</p>
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="widget">
+                    <h5>Pages</h5>
+                    <ul>
+                        <li><a href="{% url 'mainapp:about_us' %}">About Us</a></li>
+                        <li><a href="{% url 'mainapp:our_team' %}">Our Team</a></li>
+                        <li><a href="{% url 'mainapp:our_history' %}">Our History</a></li>
+                        <li><a href="{% url 'mainapp:faq' %}">FAQs</a></li>         
+                        <li><a href="{% url 'mainapp:privacy_policy' %}">Privacy Policy</a></li>         
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4">
+                <div class="widget">
+                    <h5>Newsletter</h5>
+
+                    <p>{{footersection.newsletter_description}}</p>
+                    <form action="{% url 'mainapp:footernewsletter' %}" class="row" id="form_subscribe" method="POST" name="form_subscribe">
+                        {% csrf_token %}
+                        <div class="col text-center">
+                            <input class="form-control" id="name_1" name="email" placeholder="enter your email" type="email" />
+                            <input type="submit" value="submit" class="btn btn-primary" >
+                            {% comment %} <a href="#" type="submit" class="" id="btn-submit"><i class="arrow_right"></i></a> {% endcomment %}
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                    <div class="spacer-10"></div>
+                    <small>Your email is safe with us. We don't spam.</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 sm-text-center mb-sm-30">
+                <div class="mt10">&copy; Copyright 2020 - Bluetec by Designesia</div>
+            </div>
+
+            <div class="col-md-6 text-md-right text-sm-left">
+                <div class="social-icons">
+                    <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                    <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="#"><i class="fa fa-linkedin fa-lg"></i></a>
+                    <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a href="#"><i class="fa fa-rss fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer close -->
+
+<div id="preloader">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            
+            <form method="POST" action="#" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="inputAddress">Name</label>
+                    <input type="text" class="form-control" name='name' placeholder="Full name" required>
+                </div>  
+                <div class="form-group">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control" name='email' id="inputEmail4" required>
+                </div>
+                <div class="form-group">
+                  <label for="inputAddress">Website Address</label>
+                  <input type="url" class="form-control" id="inputAddress" name='url' id="url" placeholder="https://example.com" size="40">
+                </div>
+                <div class="form-group">
+                  <label for="inputAddress2">Target Address</label>
+                  <input type="text" class="form-control" name="address" id="inputAddress2" placeholder="">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputState">State</label>
+                    <select id="inputState" class="form-control" name="p_type" required>
+                      <option value="Monthly" selected>Monthly</option>
+                      <option value="Yearly">Yearly</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+{% comment %} {{footersection.footer_main_description}} {% endcomment %}
+
+{% comment %} {% my_contacts %} {% endcomment %}
+{% comment %} {{my_contacts.footer_main_description}}
+
+{{users.footer_main_description}}
+
+{% with footer_section as footeritems %}
+
+<p>{{footeritems}}</p>
+
+{% endwith %}
+
+{% component footer_section %}
+
+    {{footer_sectio}}
+
+{% endwith %} {% endcomment %}

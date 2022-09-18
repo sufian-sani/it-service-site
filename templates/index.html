@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<title>{% block title_block %} {{homepagemeta.site_title}} {% endblock title_block %}</title>
+
+{% block body_block %}
+
+  <!-- Swiper-- header -->
+    <div class="no-bottom no-top" id="content">
+    <div id="top"></div>
+
+    <!-- content begin -->
+    {% include 'includes/header.html' %}
+
+
+        <!-- service -->
+        {% include 'includes/services.html' %}
+
+        <!-- pricing -->
+        {% include 'includes/pricing.html' %}
+
+        <!-- statup-section -->
+        {% include 'includes/statup-section.html' %}
+
+        <!-- Testimonial starts -->
+        {% include 'includes/testimonial.html' %}
+
+        <!-- Latest-news -->
+        {% include 'includes/contact-us.html' %}
+
+        <!--counter-->
+        {% include 'includes/counter-bar.html' %}
+
+
+    </div>
+    <!-- content close -->
+
+
+{% endblock body_block %}

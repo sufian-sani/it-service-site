@@ -1,0 +1,16 @@
+<section id="section-fun-facts" class="pt40 pb40 text-light bg-color-3">
+    <div class="container">
+
+        <div class="row">
+            {% for counter in counterbar %}
+            <div class="col-md-3 col-sm-6">
+                <div class="de_count">
+                    <h3 class="timer" data-to="{{counter.achievement_award}}" data-speed="3000">0</h3>
+                    <span>{{counter.achievement_title}}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>

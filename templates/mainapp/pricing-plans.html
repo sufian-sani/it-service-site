@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_block %}
+     <!-- content begin -->
+<div class="no-bottom no-top" id="content">
+    <div id="top"></div>
+    
+    <!-- section begin -->
+    <section id="subheader" data-bgimage="url({% static '' %}images/background/5.png) bottom">
+            <div class="center-y relative text-center" data-scroll-speed="4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <form action='' class="row" id='form_subscribe' method="post" name="myForm">
+                        <div class="col-md-12 text-center">
+                            <h1>Pricing Plan</h1>
+                            <p>{{pricingpagesubtitle.sub_title}}</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- section close -->
+    
+
+    <!-- section begin -->
+    <section class="no-top" data-bgimage="url({% static '' %}images/background/6.png) top">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">				
+                    <div class="switch-set">
+                        <div class='monthly'>Monthly</div>								
+                        <div><input id="sw-1" class="switch" type="checkbox" /></div>					
+                        <div class="yearly">Yearly</div>
+                        <div class="spacer-20"></div>
+                    </div>
+                    
+                </div>
+            </div>
+                    <div class="item pricing">
+                        <div class="container">
+                            <div class="row">
+                                {% for pricing in pricingcard %}
+                                <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="pricing-s1 mb30">
+                                        <div class="top">
+                                            <h2>{{pricing.title}}</h2>
+                                            <p class="plan-tagline">{{pricing.sub_title}}</p>
+                                            <span class="text-muted" style="font-size:11px;">{{pricing.catagory}}</span>
+                                        </div>
+                                        <div class="mid text-light bg-color">
+                                            <p class="price">
+                                                <span class="currency">$</span>
+                                                <span class="m opt-1">{{pricing.monthly_prices}}</span>
+                                                <span class="y opt-2">{{pricing.yearly_prices}}</span>
+                                                <span class="month">p/mo</span>
+                                            </p>               
+                                        </div>
+                                        
+                                        <div class="bottom">
+
+                                            <ul>
+                                                {% for attibute in pricingattibute %}
+                                                {% if attibute.catagory == pricing %}
+                                                    <li><i class="fa fa-check"></i>{{attibute.attibute}}</li>
+                                                {% endif %}
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="action">
+                                            <a type="button" data-toggle="modal" data-target="#exampleModal" role="button" href="#" class="btn btn-custom">Subscribe</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+        </div>
+    </section>
+    <!-- section close -->
+
+</div>
+<!-- content close -->
+{% endblock body_block %}

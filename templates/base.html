@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+    
+<!-- Mirrored from www.designesia.com/themes/bluetec/index-startup.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Aug 2022 15:04:19 GMT -->
+<head>
+    <meta charset="utf-8">
+    <title>{% block title_block %}{% endblock title_block %}</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta content="" name="author">
+
+        <!--[if lt IE 9]>
+            <script src="js/html5shiv.js"></script>
+        <![endif]-->
+
+        <!-- CSS Files
+    ================================================== -->
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/bootstrap-grid.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/bootstrap-reboot.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/animate.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/owl.theme.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/owl.transitions.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/jquery.countdown.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/custom.css' %}" rel="stylesheet" type="text/css" />
+
+        <!-- color scheme -->
+        <link id="colors" href="{% static 'css/colors/scheme-02.cs' %}s" rel="stylesheet" type="text/css" />
+        <link href="{% static 'css/coloring.css' %}" rel="stylesheet" type="text/css" />
+
+        <style></style>
+
+        {% block css_block %}{% endblock css_block %}
+
+
+    </head>
+
+    <body>
+        <div id="wrapper">
+
+            {% include 'includes/navbar.html' %}
+
+            <div class="" style="">
+                {% block body_block %}
+
+
+                {% endblock body_block %}
+            </div>
+
+            {% include 'includes/footer.html' %}
+
+        </div>
+
+        <div id="selector">
+            <span class="opt tc1" data-color="scheme-01"></span>
+            <span class="opt tc2" data-color="scheme-02"></span>
+            <span class="opt tc3" data-color="scheme-03"></span>
+            <span class="opt tc4" data-color="scheme-04"></span>
+            <span class="opt tc5" data-color="scheme-05"></span>
+
+            <span class="dark-mode">
+                Enable Dark Mode
+            </span>
+        </div>
+
+        <!-- Javascript Files
+    ================================================== -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/wow.min.js' %}"></script>
+        <script src="{% static 'js/jquery.isotope.min.js' %}"></script>
+        <script src="{% static 'js/easing.js' %}"></script>
+        <script src="{% static 'js/owl.carousel.js' %}"></script>
+        <script src="{% static 'js/validation.js' %}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/enquire.min.js' %}"></script>
+        <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+        <script src="{% static 'js/jquery.plugin.js' %}"></script>
+        <script src="{% static 'js/typed.js' %}"></script>
+        <script src="{% static 'js/jquery.countTo.js' %}"></script>
+        <script src="{% static 'js/jquery.countdown.js' %}"></script>
+        <script src="{% static 'js/designesia.js' %}"></script>
+
+        {% block js_block %} {% endblock js_block %}
+
+
+    </body>
+
+<!-- Mirrored from www.designesia.com/themes/bluetec/index-startup.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 19 Aug 2022 15:04:20 GMT -->
+</html>

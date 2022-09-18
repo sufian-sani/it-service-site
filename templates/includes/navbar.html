@@ -1,0 +1,49 @@
+{% load static %}
+<!-- header begin -->
+<header class="header-light transparent scroll-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-between">
+                    <div class="align-self-center header-col-left">
+                        <!-- logo begin -->
+                        <div id="logo">
+                            <a href="{% url 'mainapp:index' %}">
+                                <img alt="" src="{% static '' %}images/logo-2.png" />
+                            </a>
+                        </div>
+                        <!-- logo close -->
+                    </div>
+                    <div class="align-self-center ml-auto header-col-mid">
+                        <!-- mainmenu begin -->
+                        <ul id="mainmenu">
+                            <li>
+                                <a href="{% url 'mainapp:index' %}">Home</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'mainapp:services_page' %}">Our Services</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'mainapp:pricing_plans' %}">Pricing Plans</a>
+                            </li>
+                            <li>
+                                <a href="#">Company</a>
+                                <ul>
+                                    <li><a href="{% url 'mainapp:about_us' %}">About Us</a></li>
+                                    <li><a href="{% url 'mainapp:our_team' %}">Our Team</a></li>
+                                    <li><a href="{% url 'mainapp:our_history' %}">Our History</a></li>
+                                    <li><a href="{% url 'mainapp:faq' %}">FAQs</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="{% url 'mainapp:contact_us' %}">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header close -->

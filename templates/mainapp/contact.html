@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_block %}
+
+
+<!-- Header starts
+    ======================================= -->
+    <div class="inner-page-banner">
+        <div class="container text-center">
+            <h1>Contact</h1>
+            <p>Get in touch with us to see how our company can help you
+                <br>grow your business online.</p>
+        </div>
+        <!-- End of .container -->
+    </div>
+    <!-- End of .banner -->
+
+     <!-- Contact-form-wrapper starts
+    ======================================= -->
+    <div class="contact-form-wrapper section-padding">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="contact-wrapper contact-page-form-wrapper">
+                        <div class="form-wrapper">
+                            <h3>Send Us a Message</h3>
+                            <form class="contact-form" method="post">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-6">
+                                        <input type="text" name="fname" placeholder="Full Name">
+                                    </div>
+
+                                    <div class="col-md-12 col-lg-6">
+                                        <input type="email" name="email" placeholder="Email">
+                                    </div>
+
+                                    <div class="col-md-12 col-lg-6">
+                                        <input type="text" name="phone" placeholder="Phone">
+                                    </div>
+
+                                    <div class="col-md-12 col-lg-6">
+                                        <input type="text" name="website" placeholder="Website">
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <textarea name="message" placeholder="Message"></textarea>
+                                    </div>
+                                    <div class="btn-wrapper">
+                                        <button type="submit" class="custom-btn btn-big grad-style-ef">CONTACT US NOW</button>
+                                    </div>
+                                </div>
+                                <!-- End of .row -->
+                            </form>
+                            <!-- End of .contact-form -->
+                        </div>
+                        <!-- End of .form-wrapper -->
+                    </div>
+                    <!-- End of .contact-form -->
+                </div>
+                <!-- End of .col-lg-7 -->
+
+                <div class="col-lg-6">
+                    <div class="contact-info floating-contact-info">
+                        <h5>What’s Next?</h5>
+
+                        <div class="whats-next-wrapper">
+                            <p>
+                                <i class="ml-symone-68-arrow-left-right-up-down-increase-decrease"></i>An email and phone call from one of our representatives.</p>
+                            <p>
+                                <i class="ml-symone-68-arrow-left-right-up-down-increase-decrease"></i>A time &amp; cost estimation.</p>
+                            <p>
+                                <i class="ml-symone-68-arrow-left-right-up-down-increase-decrease"></i>An in-person meeting.</p>
+                        </div>
+                        <!-- End of .whats-next-wrapper -->
+
+                        <p class="address">
+                            Give us a call
+                            <a href="tel:7021231478">(702) 123-1478</a>
+                        </p>
+                        <!-- End of .address -->
+
+                        <p class="address">
+                            Send us an email
+                            <a href="mailto:info@company.com">info@company.com</a>
+                        </p>
+                        <!-- End of .address -->
+
+                        <div class="social-icons-wrapper">
+                            <p>Follow us on</p>
+                            <ul class="social-icons">
+                                <li>
+                                    <a href="http://www.behance.net/" target="_blank" rel="noopener">
+                                        <i class="fab fa-behance"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://twitter.com/" target="_blank" rel="noopener">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://plus.google.com/discover" target="_blank" rel="noopener">
+                                        <i class="fab fa-google-plus-g"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://dribbble.com/" target="_blank" rel="noopener">
+                                        <i class="fab fa-dribbble"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- End of .social-icons -->
+                        </div>
+                    </div>
+                    <!-- End of .contact-info -->
+                </div>
+                <!-- End of .col-lg-5 -->
+            </div>
+            <!-- End of .row -->
+        </div>
+        <!-- End of .container -->
+    </div>
+    <!-- End of .contact-form-wrapper -->
+
+    <!-- work-places
+======================================= -->
+    <section class="work-places section-padding">
+        <svg class="bg-shape shape-work-places reveal-from-right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="779px" height="759px">
+            <defs>
+                <linearGradient id="PSgrad_045" x1="70.711%" x2="0%" y1="70.711%" y2="0%">
+                    <stop offset="0%" stop-color="rgb(237,247,255)" stop-opacity="1" />
+                    <stop offset="100%" stop-color="rgb(237,247,255)" stop-opacity="0" />
+                </linearGradient>
+
+            </defs>
+            <path fill-rule="evenodd" fill="url(#PSgrad_045)" d="M111.652,578.171 L218.141,672.919 C355.910,795.500 568.207,784.561 692.320,648.484 C816.434,512.409 805.362,302.726 667.592,180.144 L561.104,85.396 C423.334,-37.184 211.037,-26.245 86.924,109.832 C-37.189,245.908 -26.118,455.590 111.652,578.171 Z"
+            />
+        </svg>
+        <div class="container">
+            <h2 class="text-center">Visit Our Work Places</h2>
+
+            <div class="location-process-tab">
+                <ul class="nav nav-tabs location-tab-nav" id="location-tab-nav" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="process-nav-1" data-bs-toggle="tab" href="#process-tab-1" role="tab" aria-controls="process-tab-1"
+                            aria-selected="true">
+                            <img src="{% static '' %}images/icon/map-1.png" alt="New York Map">
+                            <span>New York</span>
+                            <p>Theodore Lowe, Ap #867-859
+                                <br>Sit Rd, Azusa New York </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="process-nav-2" data-bs-toggle="tab" href="#process-tab-2" role="tab" aria-controls="process-tab-2" aria-selected="true">
+                            <img src="{% static '' %}images/icon/map-2.png" alt="Dhaka Map">
+                            <span>Dhaka</span>
+                            <p>Theodore Lowe, Ap #867-859
+                                <br>Sit Rd, Azusa New York </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="process-nav-3" data-bs-toggle="tab" href="#process-tab-3" role="tab" aria-controls="process-tab-3" aria-selected="true">
+                            <img src="{% static '' %}images/icon/map-3.png" alt="Dehli Map">
+                            <span>Delhi</span>
+                            <p>Theodore Lowe, Ap #867-859
+                                <br>Sit Rd, Azusa New York </p>
+                        </a>
+                    </li>
+                </ul>
+                <!-- End of .service-tab-nav -->
+                <div class="tab-content location-tab-content" id="location-tab">
+                    <div class="tab-pane fade show active" id="process-tab-1" role="tabpanel" aria-labelledby="process-nav-1">
+                        <div class="map-wrapper">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230240.95716433253!2d-74.14210908967785!3d40.69297082637538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbd!4v1530711929548"
+                                width="600" height="450" allowfullscreen></iframe>
+                        </div>
+                        <!-- End of .map-wrapper -->
+                    </div>
+                    <!-- End of .tab-pane -->
+
+                    <div class="tab-pane fade" id="process-tab-2" role="tabpanel" aria-labelledby="process-nav-2">
+                        <div class="map-wrapper">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.703034857812!2d90.40407911552505!3d23.79358698456803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c70e90bb671d%3A0x7eab77d0896252c0!2sBanani+Super+Market!5e0!3m2!1sen!2sbd!4v1530712354667"
+                                width="600" height="450" allowfullscreen></iframe>
+                        </div>
+                        <!-- End of .map-wrapper -->
+                    </div>
+                    <!-- End of .tab-pane -->
+
+                    <div class="tab-pane fade" id="process-tab-3" role="tabpanel" aria-labelledby="process-nav-3">
+                        <div class="map-wrapper">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d223994.25249690443!2d76.95126668887372!3d28.692332879013097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d047309fff32f%3A0xfc5606ed1b5d46c3!2sDelhi%2C+India!5e0!3m2!1sen!2sbd!4v1530712422885"
+                                width="600" height="450" allowfullscreen></iframe>
+                        </div>
+                        <!-- End of .map-wrapper -->
+                    </div>
+                    <!-- End of .tab-pane -->
+                </div>
+                <!-- End of .service-tab-content -->
+            </div>
+            <!-- End of .location-process-tab -->
+        </div>
+        <!-- End of .container -->
+    </section>
+    <!-- End of .work-places -->
+
+
+{% endblock body_block %}

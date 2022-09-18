@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_block %}
+
+
+<!-- content begin -->
+<div class="no-bottom no-top" id="content">
+    <div id="top"></div>
+    
+    <!-- section begin -->
+    <section id="subheader" data-bgimage="url({% static 'images/background/5.png' %}) bottom">
+            <div class="center-y relative text-center" data-scroll-speed="4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <form action='' class="row" id='form_subscribe' method="post" name="myForm">
+                        <div class="col-md-12 text-center">
+                            <h1>Our Story</h1>
+                            <p>{{historypagesubtitle.sub_title}}</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- section close -->
+
+    <section class="no-top pos-top relative">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    
+                    <ul class="timeline">
+                        {% for historysections in historysection %}
+                        {% if forloop.counter0|divisibleby:2 %}
+                        <li>
+                            <div class="timeline-badge"></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-body">
+                                    <div class="row">
+                                        <div class="col-md-6 timeline-pic" data-bgimage="url(/media/{{historysections.image}})">
+                                        </div>
+                                        <div class="col-md-6">                                                    
+                                            <div class="timeline-story">
+                                                <h5>{{historysections.year}}</h5>
+                                                <div class="clearfix"></div>
+                                                <h4>{{historysections.title}}</h4>
+                                                <p>
+                                                    {{historysections.description}}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        {% else %}
+                        <li class="timeline-inverted">
+                            <div class="timeline-badge"></div>
+                            <div class="timeline-panel">
+                                <div class="row">
+                                        <div class="col-md-6">                                                    
+                                            <div class="timeline-story">
+                                                <h5>{{historysections.year}}</h5>
+                                                <div class="clearfix"></div>
+                                                <h4>{{historysections.title}}</h4>
+                                                <p>
+                                                    {{historysections.description}}
+                                                </p>
+                                            </div>
+                                        </div>
+                                         <div class="col-md-6 timeline-pic" data-bgimage="url(/media/{{historysections.image}})">
+                                        </div>
+                                </div>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</div>
+
+
+
+{% endblock body_block %}

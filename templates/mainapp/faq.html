@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<title>{% block title_block %} {{meta.site_title}} {% endblock title_block %}</title>
+
+{% block body_block %}
+
+
+<!-- content begin -->
+<div class="no-bottom no-top" id="content">
+    <div id="top"></div>
+    
+    <!-- section begin -->
+    <section id="subheader" data-bgimage="url({% static '' %}images/background/5.png) bottom">
+            <div class="center-y relative text-center" data-scroll-speed="4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <form action='' class="row" id='form_subscribe' method="post" name="myForm">
+                        <div class="col-md-12 text-center">
+                            <h1>FAQs</h1>
+                            <p>{{faqpagesubtitle.sub_title}}</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- section close -->
+
+    <!-- section begin -->
+    <section class="no-top relative pos-top">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12">
+                    <!-- Accordion -->
+                    <div id="accordion-1" class="accordion accordion-style-1">
+
+                        <!-- Accordion item 1 -->
+                        {% for faqpages in faqpage %}
+                        <div class="card">
+                            <div id="heading-a{{faqpages.id}}" class="card-header bg-white shadow-sm border-0">
+                                <h6 class="mb-0 font-weight-bold"><a href="#" data-toggle="collapse" data-target="#collapse-a{{faqpages.id}}" aria-expanded="false" aria-controls="collapse-a3" class="d-block position-relative collapsed text-dark collapsible-link py-2">{{faqpages.title}}</a></h6>
+                            </div>
+                            <div id="collapse-a{{faqpages.id}}" aria-labelledby="heading-a{{faqpages.id}}" data-parent="#accordion-1" class="collapse">
+                                <div class="card-body p-4">
+                                    <p class="m-0">{{faqpages.description|safe}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+    </section>
+    <!-- section close -->
+			
+    {% include 'includes/contact-us.html' %}
+
+</div>
+<!-- content close -->
+
+
+
+
+{% endblock body_block %}

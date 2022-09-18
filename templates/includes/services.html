@@ -1,0 +1,30 @@
+{% load static %}
+<section id="section-highlight" class="no-top" data-bgimage="url({% static 'images/background/3b.png' %}) top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="text-center">
+                    <h2><span class="uptitle id-color">Our Services</span>How does it work?</h2>
+                    <div class="spacer-20"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row service_section">
+
+            {% for service in servicesection %}
+            <div class="col-lg-4 col-md-6 mb30 wow fadeInRight" data-wow-delay=".2s">
+                <a href="{{service.url}}">
+                    <div class="f-box f-icon-left f-icon-rounded">
+                        <i class="{{service.icon}} text-light" style="background-color:{{service.colour}};"></i>
+                        <div class="fb-text">
+                            <h4>{{service.title}}</h4>
+                            <p>{{service.description}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

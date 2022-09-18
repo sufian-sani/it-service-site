@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<title>{% block title_block %} {{meta.site_title}} {% endblock title_block %}</title>
+
+{% block body_block %}
+
+
+
+<!-- content begin -->
+<div class="no-bottom no-top" id="content">
+    <div id="top"></div>
+    
+    <!-- section begin -->
+    <section id="subheader" data-bgimage="url({% static '' %}images/background/5.png) bottom">
+            <div class="center-y relative text-center" data-scroll-speed="4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <form action='' class="row" id='form_subscribe' method="post" name="myForm">
+                        <div class="col-md-12 text-center">
+                            <h1>Our Services</h1>
+                            <p>{{servicepagesubtitle.sub_title}}</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- section close -->
+
+    <section class="no-top service_page">
+        <div class="container">
+            <div class="row">
+                
+                {% for services in servicesection %}
+                <div class="col-lg-4 col-md-6 col-sm-6 mb30 service_card">
+                    <a href="{{services.url}}">
+                        <div class="fp-wrap f-invert mb20">
+                            <div class="fp-icon"><i class="{{services.icon}}"></i></div>
+                            <img src="/media/{{services.image}}" class="fp-image img-fluid" alt="{{services.img_alt}}">
+                        </div>
+                    
+                        <h4>{{services.title}}</h4>
+                        <p>{{services.description}}</p>
+                    </a>
+                </div>
+                {% endfor %}
+                
+            <div>
+        </div>	
+    </section>
+
+    {% comment %} process bar start {% endcomment %}
+
+    <!-- section begin -->
+    <section class="no-top">
+        <div class="container">
+            <div class="row">
+                {% for serviceskills in serviceskill %}
+                <div class="col-md-12">
+                    <div class="skill-bar style-2">
+                        <h5>{{serviceskills.title}}</h5>
+                        <div class="de-progress">
+                            <div class="value"></div>
+                            <div class="progress-bar" data-value="{{serviceskills.skill_rate}}%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- section close -->
+
+    {% comment %} process bar end {% endcomment %}
+
+    {% comment %} <section id="section-fun-facts" class="pt40 pb40 text-light bg-color-3">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="de_count">
+                        <h3 class="timer" data-to="15425" data-speed="3000">0</h3>
+                        <span>Website Powered</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="de_count">
+                        <h3 class="timer" data-to="8745" data-speed="3000">0</h3>
+                        <span>Clients Supported</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6" data-wow-delay=".5s">
+                    <div class="de_count">
+                        <h3 class="timer" data-to="235" data-speed="3000">0</h3>
+                        <span>Awards Winning</span>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6">
+                    <div class="de_count">
+                        <h3 class="timer" data-to="15" data-speed="3000">0</h3>
+                        <span>Years Experience</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section> {% endcomment %}
+
+
+</div>
+<!-- content close -->
+
+
+
+
+{% endblock body_block %}

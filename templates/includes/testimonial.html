@@ -1,0 +1,29 @@
+{% load static %}
+
+<section id="section-testimonial" class="no-top" data-bgimage="url({% static 'images/background/3c.png' %}) top">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="text-center">
+                    <h2><span class="uptitle id-color">Testimonial</span>What They Says</h2>
+                    <div class="spacer-20"></div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="owl-carousel owl-theme wow fadeInUp testimonial-color" id="testimonial-carousel">
+                    {% for testimonialsection in testimonialsection_all %}
+                    <div class="item">
+                        <div class="de_testi opt-2">
+                            <blockquote>
+                                <p>{{testimonialsection.short_speech}}</p>
+                                <div class="de_testi_by"><img alt="{{testimonialsection.img_alt}}" class="rounded-circle" src="/media/{{testimonialsection.image}}" /> <span>{{testimonialsection.name}}, {{testimonialsection.organigation}}</span></div>
+                            </blockquote>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
