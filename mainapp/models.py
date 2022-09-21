@@ -1,4 +1,3 @@
-from turtle import color
 from django.db import models
 from django.utils import timezone
 

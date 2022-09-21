@@ -48,7 +48,7 @@ def index(request):
         'pricingcard':pricingcard,
         'pricingattibute':pricingattibute,
         'counterbar':counterbar,
-        'homepagemeta':homepagemeta,
+        'meta':homepagemeta,
     }
     return render(request, 'index.html',context)
 

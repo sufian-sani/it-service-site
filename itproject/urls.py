@@ -18,13 +18,43 @@ from django.urls import path, include
 
 from django.conf.urls.static import static
 from django.conf import settings
+
+# from django.contrib.sitemaps.views import sitemap
+# from django.contrib import sitemaps
+
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
+
+# from .sitemaps import *
+
+from django.contrib.sitemaps.views import sitemap
+from django.urls import path
+
+from mainapp.sitemaps import StaticViewSitemap
+# from . import views
+
+sitemaps = {
+    'static': StaticViewSitemap,
+}
+
+
+# from sitemaps import Static_Sitemap
+# from notebooks.sitemaps import Article_Sitemap
+
+# sitemaps = {
+#     # 'article': Article_Sitemap(),
+#     'static': Static_Sitemap(),
+# }
+
+# sitemaps = {
+#     'posts': PostSitemap,
+# }
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('mainapp.urls')),
     path('', include('digitalmarketing.urls')),
+    path('sitemap', sitemap, {'sitemaps': sitemaps},name='django.contrib.sitemaps.views.sitemap'),
 ]
 
 

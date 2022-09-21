@@ -7,8 +7,9 @@
     <meta charset="utf-8">
     <title>{% block title_block %}{% endblock title_block %}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="description">
-    <meta content="" name="keywords">
+
+    <meta content="{% block meta_description_block %}{% endblock meta_description_block %}" name="description">
+    <meta content="{% block meta_keywords_block %}{% endblock meta_keywords_block %}" name="keywords">
     <meta content="" name="author">
 
         <!--[if lt IE 9]>
