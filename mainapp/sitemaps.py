@@ -5,6 +5,8 @@
 from django.contrib import sitemaps
 from django.urls import reverse
 
+from digitalmarketing.models import *
+
 class StaticViewSitemap(sitemaps.Sitemap):
     priority = 0.5
     changefreq = 'daily'
@@ -14,6 +16,17 @@ class StaticViewSitemap(sitemaps.Sitemap):
 
     def location(self, item):
         return reverse(item)
+
+
+class PostSitemap(sitemaps.Sitemap):
+	changegreq = 'weekly'
+	priority = 0.9
+	def items(self):
+		return Seoportfolio.objects.filter(status='published')
+
+	def lastmod(self, obj):
+		return obj.updated
+
 
 # from mainapp import views
 
