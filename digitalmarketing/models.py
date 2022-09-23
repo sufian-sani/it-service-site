@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -99,9 +100,15 @@ class Seoportfolio(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return f"/seo-service-details/{self.slug}/"
+        # return reverse('seo-service-details', args=self.slug)
+        # return reverse ('seo-service-details',kwargs={"seo-service-details-slug":self.slug})
+
     class Meta:
         verbose_name = "Portfolio - Seo Page"
         verbose_name_plural = "Portfolio - Seo Page"
+
 
 
 class PortfolioImage(models.Model):

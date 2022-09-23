@@ -22,10 +22,13 @@ class PostSitemap(sitemaps.Sitemap):
 	changegreq = 'weekly'
 	priority = 0.9
 	def items(self):
-		return Seoportfolio.objects.filter(status='published')
+		return Seoportfolio.objects.all()
 
-	def lastmod(self, obj):
-		return obj.updated
+	def location(self, item):
+		return item.get_absolute_url()
+
+	# def lastmod(self, obj):
+	# 	return obj.updated
 
 
 # from mainapp import views

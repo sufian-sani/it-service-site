@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'mainapp',
     'digitalmarketing',
+    # 'robots',
 ]
 
 SITE_ID = 1
@@ -68,6 +69,7 @@ TEMPLATES = [
         'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
+            # 'loaders': ['django.template.loaders.app_directories.load_template_source',],
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',

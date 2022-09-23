@@ -55,7 +55,8 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('mainapp.urls')),
     path('', include('digitalmarketing.urls')),
-    path('sitemap', sitemap, {'sitemaps': sitemaps},name='django.contrib.sitemaps.views.sitemap'),
+    # path('robots.txt', include('robots.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},name='django.contrib.sitemaps.views.sitemap'),
 ]
 
 
