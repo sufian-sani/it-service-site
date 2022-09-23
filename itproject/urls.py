@@ -30,6 +30,9 @@ from django.contrib.sitemaps.views import sitemap
 from django.urls import path
 
 from mainapp.sitemaps import StaticViewSitemap, PostSitemap
+
+from django.views.generic.base import TemplateView #import TemplateView
+
 # from . import views
 
 sitemaps = {
@@ -57,6 +60,7 @@ urlpatterns = [
     path('', include('digitalmarketing.urls')),
     # path('robots.txt', include('robots.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps},name='django.contrib.sitemaps.views.sitemap'),
+    path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")),  #add the robots.txt file
 ]
 
 

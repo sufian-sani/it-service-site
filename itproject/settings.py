@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # 'jazzmin',
+    # 'robots',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,7 +46,6 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'mainapp',
     'digitalmarketing',
-    # 'robots',
 ]
 
 SITE_ID = 1
