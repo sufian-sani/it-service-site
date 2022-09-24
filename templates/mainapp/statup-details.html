@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<title>{% block title_block %}{{meta.site_title}}{% endblock title_block %}</title>
+<title>{% block title_block %}{{startupdetails.site_title}}{% endblock title_block %}</title>
 
-<meta content="{% block meta_description_block %}{{meta.meta_description}}{% endblock meta_description_block %}" name="description">
-<meta content="{% block meta_keywords_block %}{{meta.meta_keywords}}{% endblock meta_keywords_block %}" name="keywords">
+<meta content="{% block meta_description_block %}{{startupdetails.meta_description}}{% endblock meta_description_block %}" name="description">
+<meta content="{% block meta_keywords_block %}{{startupdetails.meta_keywords}}{% endblock meta_keywords_block %}" name="keywords">
 
 
 {% block body_block %}

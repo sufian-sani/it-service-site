@@ -8,13 +8,13 @@ from django.http import HttpResponseRedirect
 
 def index(request):
     headerhomepage=Headerhomepage.objects.first()
-    startupsection=Startupsection.objects.first()
+    # startupsection=Startupsection.objects.first()
     testimonialsection_all=Testimonialsection.objects.all()
     contactussection=Contactussection.objects.first()
     servicesection=Servicesection.objects.all()
     testimonialsection_all = Testimonialsection.objects.all()
     counterbar = Counterbar.objects.all()[:4]
-    homepagemeta = Homepagemeta.objects.first()
+    # homepagemeta = Homepagemeta.objects.first()
 
     pricingcard = Pricingcard.objects.all()
     pricingattibute = Pricingattibute.objects.all()
@@ -41,23 +41,23 @@ def index(request):
 
     context = {
         'headerhomepage': headerhomepage,
-        'startupsection':startupsection,
+        # 'startupsection':startupsection,
         'testimonialsection_all':testimonialsection_all,
         'contactussection':contactussection,
         'servicesection':servicesection,
         'pricingcard':pricingcard,
         'pricingattibute':pricingattibute,
         'counterbar':counterbar,
-        'meta':homepagemeta,
+        # 'meta':homepagemeta,
     }
     return render(request, 'index.html',context)
 
 def startupdetails(request):
     startupdetails = Startupdetails.objects.first()
-    startuppagemeta = Startuppagemeta.objects.first()
+    # startuppagemeta = Startuppagemeta.objects.first()
     context = {
         'startupdetails':startupdetails,
-        'meta':startuppagemeta,
+        # 'meta':startuppagemeta,
     }
     return render(request, 'mainapp/statup-details.html',context)
 
@@ -101,26 +101,25 @@ def our_history(request):
     return render(request, 'mainapp/our-history.html',context)
 
 def faq(request):
-    faqpagesubtitle = Faqpagesubtitle.objects.first()
+    faqpagesubtitlemeta = Faqpagesubtitlemeta.objects.first()
     faqpage = Faqpage.objects.all()
-    faqpagemeta = Faqpagemeta.objects.first()
+    # faqpagemeta = Faqpagemeta.objects.first()
     context = {
-        'faqpagesubtitle': faqpagesubtitle,
+        'faqpagesubtitlemeta': faqpagesubtitlemeta,
         'faqpage': faqpage,
-        'meta': faqpagemeta,
     }
     return render(request, 'mainapp/faq.html',context)
 
 def services_page(request):
-    servicepagesubtitle = Servicepagesubtitle.objects.first()
+    servicepagesubtitlemeta = Servicepagesubtitlemeta.objects.first()
     servicesection=Servicesection.objects.all()
     serviceskill = Serviceskill.objects.all()
-    servicepagemeta = Servicepagemeta.objects.first()
+    # servicepagemeta = Servicepagemeta.objects.first()
     context = {
-        'servicepagesubtitle':servicepagesubtitle,
+        'servicepagesubtitlemeta':servicepagesubtitlemeta,
         'servicesection': servicesection,
         'serviceskill': serviceskill,
-        'meta': servicepagemeta,
+        # 'meta': servicepagemeta,
     }
     return render(request, 'mainapp/services-page.html',context)
 

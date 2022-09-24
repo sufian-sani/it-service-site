@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<title>{% block title_block %}{{meta.site_title}}{% endblock title_block %}</title>
+<title>{% block title_block %}{{faqpagesubtitlemeta.meta_site_title}}{% endblock title_block %}</title>
 
-<meta content="{% block meta_description_block %}{{meta.meta_description}}{% endblock meta_description_block %}" name="description">
-<meta content="{% block meta_keywords_block %}{{meta.meta_keywords}}{% endblock meta_keywords_block %}" name="keywords">
+<meta content="{% block meta_description_block %}{{faqpagesubtitlemeta.meta_description}}{% endblock meta_description_block %}" name="description">
+<meta content="{% block meta_keywords_block %}{{faqpagesubtitlemeta.meta_keywords}}{% endblock meta_keywords_block %}" name="keywords">
 
 
 {% block body_block %}
@@ -23,7 +23,7 @@
                             <form action='' class="row" id='form_subscribe' method="post" name="myForm">
                         <div class="col-md-12 text-center">
                             <h1>FAQs</h1>
-                            <p>{{faqpagesubtitle.sub_title}}</p>
+                            <p>{{faqpagesubtitlemeta.sub_title}}</p>
                         </div>
                         <div class="clearfix"></div>
                     </form>

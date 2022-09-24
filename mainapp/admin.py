@@ -4,16 +4,16 @@ from .models import *
 
 # home page start
 admin.site.register(Headerhomepage)
-admin.site.register(Startupsection)
+# admin.site.register(Startupsection)
 admin.site.register(Testimonialsection)
 admin.site.register(Contactussection)
 admin.site.register(Footersection)
 admin.site.register(Servicesection)
 admin.site.register(Counterbar)
-admin.site.register(Homepagemeta)
+# admin.site.register(Homepagemeta)
 
 
-admin.site.register(Startuppagemeta)
+# admin.site.register(Startuppagemeta)
 
 # home page end
 
@@ -28,8 +28,8 @@ admin.site.register(Aboutussecondsection)
 
 # faq page start
 
-admin.site.register(Faqpagemeta)
-admin.site.register(Faqpagesubtitle)
+# admin.site.register(Faqpagemeta)
+admin.site.register(Faqpagesubtitlemeta)
 admin.site.register(Faqpage)
 
 # faq page end
@@ -50,8 +50,8 @@ admin.site.register(Teampage)
 # team page end
 
 # service page start
-admin.site.register(Servicepagemeta)
-admin.site.register(Servicepagesubtitle)
+# admin.site.register(Servicepagemeta)
+admin.site.register(Servicepagesubtitlemeta)
 admin.site.register(Serviceskill)
 
 # service page end

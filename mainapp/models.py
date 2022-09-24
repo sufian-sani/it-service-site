@@ -10,61 +10,71 @@ from django.core.validators import RegexValidator
 
 # seo section start
 
-class Homepagemeta(models.Model):
-    site_title = models.CharField(max_length=200)
-    meta_description = models.CharField(max_length=500)
-    meta_keywords = models.CharField(max_length=500)
+# class Homepagemeta(models.Model):
+#     site_title = models.CharField(max_length=200)
+#     meta_description = models.CharField(max_length=500)
+#     meta_keywords = models.CharField(max_length=500)
 
-    def __str__(self):
-        return self.site_title
+#     def __str__(self):
+#         return self.site_title
 
-    class Meta: 
-        verbose_name = "Homepage Meta - Homepage"
-        verbose_name_plural = "Homepage Meta - Homepage"
+#     class Meta: 
+#         verbose_name = "Homepage Meta - Homepage"
+#         verbose_name_plural = "Homepage Meta - Homepage"
 
 # seo section end
 
 # index page start
 class Headerhomepage(models.Model):
+    site_title = models.CharField(max_length=200, blank=True, null=True)
+    meta_description = models.CharField(max_length=500, blank=True, null=True)
+    meta_keywords = models.CharField(max_length=500, blank=True, null=True)
     subtitle = models.CharField(max_length=500)
     title = models.CharField(max_length=200)
     sort_description = models.CharField(max_length=1000)
     image = models.ImageField(upload_to='header_homepage')
     img_alt = models.CharField(max_length=200, blank=True, null=True)
+    startup_section_title = models.CharField(max_length=200, blank=True, null=True)
+    startup_section_description = models.TextField(blank=True, null=True)
+    startup_section_image = models.ImageField(upload_to='startup_section', blank=True, null=True)
+    startup_section_img_alt = models.CharField(max_length=200, blank=True, null=True)
 
     def __str__(self):
         return self.title
 
     class Meta: 
-        verbose_name = "Header - Homepage"
-        verbose_name_plural = "Header - Homepage"
+        verbose_name = "Header and Meta - Homepage"
+        verbose_name_plural = "Header and Meta - Homepage"
 
-class Startuppagemeta(models.Model):
-    site_title = models.CharField(max_length=200)
-    meta_description = models.CharField(max_length=500)
-    meta_keywords = models.CharField(max_length=500)
+# class Startuppagemeta(models.Model):
+#     site_title = models.CharField(max_length=200)
+#     meta_description = models.CharField(max_length=500)
+#     meta_keywords = models.CharField(max_length=500)
 
-    def __str__(self):
-        return self.site_title
+#     def __str__(self):
+#         return self.site_title
 
-    class Meta: 
-        verbose_name = "Startup Meta - Start up Page"
-        verbose_name_plural = "Startup Meta - Start up Page"
+#     class Meta: 
+#         verbose_name = "Startup Meta - Start up Page"
+#         verbose_name_plural = "Startup Meta - Start up Page"
 
-class Startupsection(models.Model):
-    title = models.CharField(max_length=200)
-    description = models.TextField(blank=True, null=True)
-    image = models.ImageField(upload_to='startup_section')
-    img_alt = models.CharField(max_length=200, blank=True, null=True)
+# class Startupsection(models.Model):
+#     startup_section_title = models.CharField(max_length=200)
+#     startup_section_description = models.TextField(blank=True, null=True)
+#     startup_section_image = models.ImageField(upload_to='startup_section')
+#     startup_section_img_alt = models.CharField(max_length=200, blank=True, null=True)
 
-    def __str__(self):
-        return self.title
+#     def __str__(self):
+#         return self.title
 
-    class Meta: 
-        verbose_name = "Startup - Homepage"
-        verbose_name_plural = "Startup - Homepage"
+#     class Meta: 
+#         verbose_name = "Startup - Homepage"
+#         verbose_name_plural = "Startup - Homepage"
 
 class Startupdetails(models.Model):
+    site_title = models.CharField(max_length=200, blank=True, null=True)
+    meta_description = models.CharField(max_length=500, blank=True, null=True)
+    meta_keywords = models.CharField(max_length=500, blank=True, null=True)
     sub_title = models.CharField(max_length=500)
     body_description = RichTextUploadingField(blank=True,null=True)
 
@@ -72,8 +82,8 @@ class Startupdetails(models.Model):
         return self.sub_title
 
     class Meta: 
-        verbose_name = "Startup Details Page - Homepage Startup"
-        verbose_name_plural = "Startup Details Page - Homepage Startup"
+        verbose_name = "Startup Details Page Meta - Homepage Startup"
+        verbose_name_plural = "Startup Details Page Meta - Homepage Startup"
 
 class Testimonialsection(models.Model):
     short_speech = models.TextField()
@@ -185,29 +195,32 @@ class Aboutussecondsection(models.Model):
 
 #faq page start
 
-class Faqpagemeta(models.Model):
-    site_title = models.CharField(max_length=200)
-    meta_description = models.CharField(max_length=500)
-    meta_keywords = models.CharField(max_length=500)
+# class Faqpagemeta(models.Model):
+#     site_title = models.CharField(max_length=200)
+#     meta_description = models.CharField(max_length=500)
+#     meta_keywords = models.CharField(max_length=500)
 
-    def __str__(self):
-        return self.site_title
+#     def __str__(self):
+#         return self.site_title
 
-    class Meta: 
-        verbose_name = "Faq Meta - Faq Page"
-        verbose_name_plural = "Faq Meta - Faq Page"
+#     class Meta: 
+#         verbose_name = "Faq Meta - Faq Page"
+#         verbose_name_plural = "Faq Meta - Faq Page"
 
 # meta
 
-class Faqpagesubtitle(models.Model):
+class Faqpagesubtitlemeta(models.Model):
+    meta_site_title = models.CharField(max_length=200, blank=True,null=True)
+    meta_description = models.CharField(max_length=500, blank=True,null=True)
+    meta_keywords = models.CharField(max_length=500, blank=True,null=True)
     sub_title = models.CharField(max_length=500)
 
     def __str__(self):
         return str('Faq Page Subtitle')
 
     class Meta: 
-        verbose_name = "Subtitle - Faq Page"
-        verbose_name_plural = "Subtitle - Faq Page"
+        verbose_name = "Faq Subtitle and Meta - Faq Page"
+        verbose_name_plural = "Faq Subtitle and Meta - Faq Page"
 
 class Faqpage(models.Model):
     title = models.CharField(max_length=500)
@@ -294,27 +307,30 @@ class Teampage(models.Model):
 
 #service page start
 
-class Servicepagemeta(models.Model):
-    site_title = models.CharField(max_length=200)
+# class Servicepagemeta(models.Model):
+#     meta_site_title = models.CharField(max_length=200)
+#     meta_description = models.CharField(max_length=500)
+#     meta_keywords = models.CharField(max_length=500)
+
+#     def __str__(self):
+#         return self.site_title
+
+#     class Meta: 
+#         verbose_name = "Service Meta - Service Page"
+#         verbose_name_plural = "Service Meta - Service Page"
+
+class Servicepagesubtitlemeta(models.Model):
+    meta_site_title = models.CharField(max_length=200)
     meta_description = models.CharField(max_length=500)
     meta_keywords = models.CharField(max_length=500)
-
-    def __str__(self):
-        return self.site_title
-
-    class Meta: 
-        verbose_name = "Service Meta - Service Page"
-        verbose_name_plural = "Service Meta - Service Page"
-
-class Servicepagesubtitle(models.Model):
     sub_title = models.CharField(max_length=500)
 
     def __str__(self):
         return str('Service Page Subtitle')
 
     class Meta: 
-        verbose_name = "Subtitle - Service Page"
-        verbose_name_plural = "Subtitle - Service Page"
+        verbose_name = "Service Subtitle and Meta - Service Page"
+        verbose_name_plural = "Service Subtitle and Meta - Service Page"
 
 class Serviceskill(models.Model):
     title = models.CharField(max_length=200)
