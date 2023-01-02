@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<title>{% block title_block %}{{meta.site_title}}{% endblock title_block %}</title>
+<title>{% block title_block %}{{seoservicehomepagecontentandmeta.meta_site_title}}{% endblock title_block %}</title>
 
-<meta content="{% block meta_description_block %}{{meta.meta_description}}{% endblock meta_description_block %}" name="description">
-<meta content="{% block meta_keywords_block %}{{meta.meta_keywords}}{% endblock meta_keywords_block %}" name="keywords">
+<meta content="{% block meta_description_block %}{{seoservicehomepagecontentandmeta.meta_description}}{% endblock meta_description_block %}" name="description">
+<meta content="{% block meta_keywords_block %}{{seoservicehomepagecontentandmeta.meta_keywords}}{% endblock meta_keywords_block %}" name="keywords">
 
 
 {% comment %} seoservicehomepage.site_title {% endcomment %}
@@ -24,8 +24,8 @@
                             <div class="col-md-8 offset-md-2">
                                 <form action='' class="row" id='form_subscribe' method="post" name="myForm">
                             <div class="col-md-12 text-center">
-                                <h1>{{seopagesubtitle.title}}</h1>
-                                <p>{{seopagesubtitle.sub_title}}</p>
+                                <h1>{{seoservicehomepagecontentandmeta.title}}</h1>
+                                <p>{{seoservicehomepagecontentandmeta.sub_title}}</p>
                             </div>
                             <div class="clearfix"></div>
                         </form>
@@ -41,12 +41,12 @@
                 <div class="row align-items-center">
                 
                     <div class="col-md-6">
-                        <h3>{{seopagefirstsection.title}}?</h3>
-                        {{seopagefirstsection.description|safe}} 
+                        <h3>{{seoservicehomepagecontentandmeta.firstsection_title}}</h3>
+                        {{seoservicehomepagecontentandmeta.firstsection_description|safe}} 
                     </div>
                     
                     <div class="col-md-6">
-                        <img src="/media/{{seopagefirstsection.image}}" class="img-fluid" alt="{{seopagefirstsection.img_alt}}}">
+                        <img src="/media/{{seoservicehomepagecontentandmeta.firstsection_image}}" class="img-fluid" alt="{{seoservicehomepagecontentandmeta.firstsection_img_alt}}}">
                     </div>
                     
                 </div>

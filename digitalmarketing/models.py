@@ -12,17 +12,23 @@ from mainapp.models import Servicesection
 
 # seo model start
 
-class Seoservicehomepagemeta(models.Model):
-    site_title = models.CharField(max_length=200)
+class Seoservicehomepagecontentandmeta(models.Model):
+    meta_site_title = models.CharField(max_length=200)
     meta_description = models.CharField(max_length=500)
     meta_keywords = models.CharField(max_length=500)
+    title = models.CharField(max_length=200)
+    sub_title = models.CharField(max_length=500)
+    firstsection_title = models.CharField(max_length=500)
+    firstsection_description = RichTextField(config_name='basic_ckeditor',blank=True,null=True)
+    firstsection_image = models.ImageField(upload_to='aboutus')
+    firstsection_img_alt = models.CharField(max_length=200, blank=True, null=True)
 
     def __str__(self):
-        return self.site_title
+        return self.title
 
     class Meta: 
-        verbose_name = "SEO Service Page Meta - SEO Homepage"
-        verbose_name_plural = "SEO Service Page Meta - SEO Homepage"
+        verbose_name = "SEO Service Page Content and Meta - SEO Homepage"
+        verbose_name_plural = "SEO Service Page Content and Meta - SEO Homepage"
 
 class Serviceselect(models.Model):
     serviceselect = models.ForeignKey(Servicesection, default=None, on_delete=models.CASCADE)
@@ -33,29 +39,29 @@ class Serviceselect(models.Model):
         verbose_name = "Service Select - SEO Page"
         verbose_name_plural = "Service Select - SEO Page"
 
-class Seopagesubtitle(models.Model):
-    title = models.CharField(max_length=200)
-    sub_title = models.CharField(max_length=500)
+# class Seopagesubtitle(models.Model):
+#     title = models.CharField(max_length=200)
+#     sub_title = models.CharField(max_length=500)
 
-    def __str__(self):
-        return self.title
+#     def __str__(self):
+#         return self.title
 
-    class Meta: 
-        verbose_name = "Header - SEO Page"
-        verbose_name_plural = "Header - SEO Page"
+#     class Meta: 
+#         verbose_name = "Header - SEO Page"
+#         verbose_name_plural = "Header - SEO Page"
 
-class Seopagefirstsection(models.Model):
-    title = models.CharField(max_length=500)
-    description = RichTextField(config_name='basic_ckeditor',blank=True,null=True)
-    image = models.ImageField(upload_to='aboutus')
-    img_alt = models.CharField(max_length=200, blank=True, null=True)
+# class Seopagefirstsection(models.Model):
+#     firstsection_title = models.CharField(max_length=500)
+#     firstsection_description = RichTextField(config_name='basic_ckeditor',blank=True,null=True)
+#     firstsection_image = models.ImageField(upload_to='aboutus')
+#     firstsection_img_alt = models.CharField(max_length=200, blank=True, null=True)
 
-    def __str__(self):
-        return self.title
+#     def __str__(self):
+#         return self.title
 
-    class Meta: 
-        verbose_name = "First Section - Seo Page"
-        verbose_name_plural = "First Section - Seo Page"
+#     class Meta: 
+#         verbose_name = "First Section - Seo Page"
+#         verbose_name_plural = "First Section - Seo Page"
 
 class Seopagebenefits(models.Model):
     icon_class = models.CharField(max_length=500)
@@ -79,19 +85,22 @@ class Seoservicefaq(models.Model):
         verbose_name = "Faq - Seo Page"
         verbose_name_plural = "Faq - Seo Page"
 
-class Seoportfoliopagemeta(models.Model):
-    site_title = models.CharField(max_length=200)
-    meta_description = models.CharField(max_length=500)
-    meta_keywords = models.CharField(max_length=500)
+# class Seoportfoliopagemeta(models.Model):
+#     site_title = models.CharField(max_length=200)
+#     meta_description = models.CharField(max_length=500)
+#     meta_keywords = models.CharField(max_length=500)
 
-    def __str__(self):
-        return self.site_title
+#     def __str__(self):
+#         return self.site_title
 
-    class Meta: 
-        verbose_name = "SEO Portfolio Page Meta - SEO Homepage"
-        verbose_name_plural = "SEO Portfolio Page Meta - SEO Homepage"
+#     class Meta: 
+#         verbose_name = "SEO Portfolio Page Meta - SEO Homepage"
+#         verbose_name_plural = "SEO Portfolio Page Meta - SEO Homepage"
 
 class Seoportfolio(models.Model):
+    meta_site_title = models.CharField(max_length=200, blank=True, null=True)
+    meta_description = models.CharField(max_length=500, blank=True, null=True)
+    meta_keywords = models.CharField(max_length=500, blank=True, null=True)
     title = models.CharField(max_length=500)
     feature_image = models.ImageField(upload_to='seoportfolio/')
     img_alt = models.CharField(max_length=200, blank=True, null=True)
@@ -106,8 +115,8 @@ class Seoportfolio(models.Model):
         # return reverse ('seo-service-details',kwargs={"seo-service-details-slug":self.slug})
 
     class Meta:
-        verbose_name = "Portfolio - Seo Page"
-        verbose_name_plural = "Portfolio - Seo Page"
+        verbose_name = "Portfolio with Meta - Seo Page"
+        verbose_name_plural = "Portfolio with Meta - Seo Page"
 
 
 

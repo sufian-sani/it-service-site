@@ -4,13 +4,13 @@ from mainapp.models import *
 
 # Create your views here.
 def seo_service_details(request):
-    seopagesubtitle=Seopagesubtitle.objects.first()
-    seopagefirstsection = Seopagefirstsection.objects.first()
+    seoservicehomepagecontentandmeta=Seoservicehomepagecontentandmeta.objects.first()
+    # seopagefirstsection = Seopagefirstsection.objects.first()
     seopagebenefits = Seopagebenefits.objects.all()[:4]
     seoservicefaq = Seoservicefaq.objects.all()
     seoportfolio = Seoportfolio.objects.all()
 
-    seoservicehomepagemeta = Seoservicehomepagemeta.objects.first()
+    # seoservicehomepagemeta = Seoservicehomepagemeta.objects.first()
 
     pricingcard = Pricingcard.objects.all()
     pricingattibute = Pricingattibute.objects.all()
@@ -28,24 +28,24 @@ def seo_service_details(request):
 
 
     context = {
-        'seopagesubtitle': seopagesubtitle,
-        'seopagefirstsection': seopagefirstsection,
+        'seoservicehomepagecontentandmeta': seoservicehomepagecontentandmeta,
+        # 'seopagefirstsection': seopagefirstsection,
         'seopagebenefits': seopagebenefits,
         'seoservicefaq': seoservicefaq,
         'seoportfolio': seoportfolio,
         'pricingcard':pricingcard,
         'pricingattibute':pricingattibute,
-        'meta':seoservicehomepagemeta,
+        # 'meta':seoservicehomepagemeta,
     }
     return render(request, 'digitalmarketing/seo-service-details.html',context)
 
 def protfolio_details(request, slug):
     seoportfolio=Seoportfolio.objects.get(slug=slug)
-    seoportfoliopagemeta=Seoportfoliopagemeta.objects.first()
+    # seoportfoliopagemeta=Seoportfoliopagemeta.objects.first()
     portfolio_details_img = PortfolioImage.objects.filter(portfolio=seoportfolio).values('images')
     context = {
         'seoportfolio': seoportfolio,
         'portfolio_details_img':portfolio_details_img,
-        'meta':seoportfoliopagemeta,
+        # 'meta':seoportfoliopagemeta,
     }
     return render(request, 'digitalmarketing/protfolio-details.html',context)

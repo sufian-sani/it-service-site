@@ -4,15 +4,15 @@ from .models import *
 
 # seo start
 
-admin.site.register(Seoservicehomepagemeta)
+admin.site.register(Seoservicehomepagecontentandmeta)
 admin.site.register(Serviceselect)
-admin.site.register(Seopagesubtitle)
-admin.site.register(Seopagefirstsection)
+# admin.site.register(Seopagesubtitle)
+# admin.site.register(Seopagefirstsection)
 admin.site.register(Seopagebenefits)
 admin.site.register(Seoservicefaq)
 
 
-admin.site.register(Seoportfoliopagemeta)
+# admin.site.register(Seoportfoliopagemeta)
 
 
 class ProtfolioImageAdmin(admin.StackedInline):
